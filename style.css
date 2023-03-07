@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    background: #2C3E50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: "";
+    top: 10%;
+    right: 20%;
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, red, blue);
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+
+section::after {
+    content: "";
+    bottom: 10%;
+    left: 20%;
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, blue, red);
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.clock {
+    border-radius: 30px;
+    width: 800px;
+    height: 250px;
+    position: relative;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.container h2{
+    font-size: 50px;
+    color: aliceblue;
+}
+.dot{
+    padding-bottom: 10px;
+}
+.container h2:nth-child(odd){
+    padding: 0 10px 0 10px;
+}
+span{
+    color: white;
+}
+#seconds{
+    color: yellow;
+}
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features button{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+.features button:hover{
+    background-color: gray;
+}
